@@ -24,3 +24,6 @@
 - fetch
 - LocalStorage / Cookies
 - Полифиллы
+
+#### Задачи для ревью:
+- Звездные войны (находится в папке practice/core-promises-star-wars)
