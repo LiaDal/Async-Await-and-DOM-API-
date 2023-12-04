@@ -30,16 +30,16 @@
 
   <main>
     <section class="section">
-      <div class="column is-half is-offset-2">
+      <form id="form" class="column is-half is-offset-2">
         <div id="byQueryBlock" class="search">
-          <input class="is-large input" type="text" placeholder="Search...">
-          <button id="byQueryBtn" class="is-large button">Search</button>
+          <input id="searchInput" class="is-large input" type="text" placeholder="Search...">
+          <button id="byQueryBtn" type="submit" class="is-large button">Search</button>
         </div>
-      </div>
+      </form>
     </section>
 
     <div class="spinnerContainer">
-      <img class="spinner" src="images/dv.png" alt="">
+      <img id="spinner" src="images/dv.png" alt="">
     </div>
 
     <section class="section">
@@ -48,7 +48,7 @@
         <article class="message is-dark">
           <div class="message-header">
             <p>Primary</p>
-            <button class="delete" aria-label="delete"></button>
+            <button class="delete" aria-label="delete" onclick="this.parentNode.parentNode.style.display = 'none'"></button>
           </div>
           <div id="content" class="message-body">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. <strong>Pellentesque risus mi</strong>, tempus quis
