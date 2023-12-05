@@ -30,7 +30,15 @@
 
   <main>
     <section class="section">
-      <form id="form" class="column is-half is-offset-2">
+      
+      <form id="form" class="column ">
+        <div class="select is-large">
+          <select>
+            <option>PEOPLE</option>
+            <option>PLANETS</option>
+            <option>SPECIES</option>
+          </select>
+        </div>
         <div id="byQueryBlock" class="search">
           <input id="searchInput" class="is-large input" type="text" placeholder="Search...">
           <button id="byQueryBtn" type="submit" class="is-large button">Search</button>
@@ -47,7 +55,7 @@
       <div id="result-container" class="column is-5 is-offset-2">
         <article class="message is-dark">
           <div class="message-header">
-            <p>Primary</p>
+            <p id="message-title">Primary</p>
             <button class="delete" aria-label="delete" onclick="this.parentNode.parentNode.style.display = 'none'"></button>
           </div>
           <div id="content" class="message-body">

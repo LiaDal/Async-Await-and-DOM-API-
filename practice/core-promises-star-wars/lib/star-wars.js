@@ -15,7 +15,7 @@
 // Всё, что вам необходимо знать: эти методы умеют получать данные и возвращают промисы.
 // Поробуйте запустить их в своем скрипте search.js.
 
-const starWars = {
+ const starWars = {
 
   // --- Search Methods ---
 
@@ -64,3 +64,5 @@ const starWars = {
     await fetch(`https://swapi.dev/api/films/${id}`)
   ).json()),
 }
+
+
