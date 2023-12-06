@@ -46,8 +46,7 @@ ul>li>ul>li {
 
 #result-container {
   visibility: hidden;
-  display: flex;
-  justify-content: center;
+  display: inline-block;
 }
 
 #spinner {

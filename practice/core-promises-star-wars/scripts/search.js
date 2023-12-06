@@ -1,26 +1,24 @@
+import {starWars} from '../lib/star-wars.js'
+
 const searchBtn = document.getElementById("byQueryBtn");
 const searchIDBtn = document.getElementById("byIdBtn");
 const contentField = document.getElementById("content");
 const searchInput = document.getElementById("searchInput");
+const searchIdInput = document.getElementById("searchIdInput");
 const resultBlock = document.getElementById("result-container")
 const loader = document.getElementById("spinner")
 const selectName = document.getElementById("select-name");
-const selectId = document.getElementById("select-name");
-
+const selectId = document.getElementById("select-id");
+const titleOutput = document.getElementById("message-title");
 
 selectName.addEventListener('change', (e) => {
   return selectName.options[selectName.selectedIndex].value;
 })
 
-selectId.addEventListener('change', (e) => {
-  return selectId.options[selectId.selectedIndex].value;
-})
-
-  searchBtn.addEventListener('click', (e) => {
+searchBtn.addEventListener('click', (e) => {
   e.preventDefault();
 
   let searchText = searchInput.value;
-  let titleOutput = document.getElementById("message-title")
   loader.style.visibility = 'visible';
 
   if (searchText.trim() === '') {
@@ -127,5 +125,41 @@ selectId.addEventListener('change', (e) => {
     searchSpecies();
   }
   });
-  
- 
+
+
+  selectId.addEventListener('change', (e) => {
+    return selectId.options[selectId.selectedIndex].value;
+  })
+
+  searchIDBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    let searchId = searchIdInput.value;
+    loader.style.visibility = 'visible';
+
+
+    if(selectId.options[selectId.selectedIndex].value === 'people') {
+      starWars.getCharactersById(searchId)
+      .then((result) => {
+        loader.style.visibility = 'hidden';
+        resultBlock.style.visibility = 'visible';
+        contentField.innerHTML = Object.entries(result).map(([k, v]) => `<p>${k}: ${v} </p>`).join('')
+
+      })
+    } else if(selectId.options[selectId.selectedIndex].value === 'planets'){
+      starWars.getPlanetsById(searchId)
+      .then((result) => {
+        loader.style.visibility = 'hidden';
+        resultBlock.style.visibility = 'visible';
+        contentField.innerHTML = Object.entries(result).map(([k, v]) => `<p>${k}: ${v} </p>`).join('')
+
+      })
+    } else {
+      starWars.getSpeciesById(searchId)
+      .then((result) => {
+        loader.style.visibility = 'hidden';
+        resultBlock.style.visibility = 'visible';
+        contentField.innerHTML = Object.entries(result).map(([k, v]) => `<p>${k}: ${v} </p>`).join('')
+
+      })
+    }
+  })

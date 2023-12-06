@@ -14,9 +14,9 @@
   <link rel="stylesheet" href="stylesheets/style.css">
 
   <!-- Библотека методов для получения данных про Star Wars -->
-  <script defer src="lib/star-wars.js"></script>
+  <script defer type="module" src="lib/star-wars.js"></script>
   <!-- Скрипт, который вам предстоит написать! -->
-  <script defer src="scripts/search.js"></script>
+  <script defer type="module" src="scripts/search.js"></script>
 
   <title>STAR WARS</title>
 </head>
@@ -31,7 +31,7 @@
   <main>
     <section class="section">
       
-      <form id="form" class="column">
+      <form id="formName" class="column">
         <div class="select is-large">
           <select id="select-name">
             <option value="people">PEOPLE</option>
@@ -47,7 +47,7 @@
 
       <h2 class="or">OR</h2>
 
-      <form id="form" class="column">
+      <form id="formID" class="column">
         <div class="select is-large">
           <select id="select-id">
             <option value="people">PEOPLE</option>
@@ -56,7 +56,7 @@
           </select>
         </div>
         <div id="byQueryBlock" class="search">
-          <input id="searchInput" class="is-large input" type="text" placeholder="Search...">
+          <input id="searchIdInput" class="is-large input" type="text" placeholder="Search...">
           <button id="byIdBtn" type="submit" class="is-large button">Get by id</button>
         </div>
       </form>
