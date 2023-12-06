@@ -8,8 +8,6 @@ const selectName = document.getElementById("select-name");
 const selectId = document.getElementById("select-name");
 
 
-console.log(starWars.getSpeciesById(id))
-
 selectName.addEventListener('change', (e) => {
   return selectName.options[selectName.selectedIndex].value;
 })
@@ -121,9 +119,9 @@ selectId.addEventListener('change', (e) => {
             `);
   };
 
-  if(select.options[select.selectedIndex].value === 'people') {
+  if(selectName.options[selectName.selectedIndex].value === 'people') {
     searchCharacter();
-  } else if(select.options[select.selectedIndex].value === 'planets'){
+  } else if(selectName.options[selectName.selectedIndex].value === 'planets'){
     searchPlanets();
   } else {
     searchSpecies();
